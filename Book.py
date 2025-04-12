@@ -15,10 +15,6 @@ class Author:
     def get_details(self):  # Instance Method
         return f"{self._name} ({self._nationality})"
 
-    @staticmethod
-    def author_format():  # Static Method
-        return "Author format: Name (Nationality)"
-
     @classmethod
     def from_string(cls, info):  # Class Method
         name, nationality = info.split("-")
@@ -35,17 +31,16 @@ class Book(Displayable):
         print(f"Author: {self._author.get_details()}")
 
 def main():
-    author1 = Author("George Orwell", "British")
+    author1 = Author("George Orwell", "England")
     book1 = Book("1984", author1)
 
-    author2 = Author.from_string("Haruki Murakami-Japanese")
+    author2 = Author.from_string("Haruki Murakami-Japan")
     book2 = Book("Kafka on the Shore", author2)
 
     book1.display_info()
-    print("---")
+    print("")
     book2.display_info()
 
-    print("Author Format:", Author.author_format())  # Static Method
 
 
 if __name__ == "__main__":
